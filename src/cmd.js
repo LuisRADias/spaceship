@@ -13,7 +13,7 @@ $(document).ready( function ()
     
     pressed = new Array(0, 0, 0);
     bullets = new Bullet;
-    bullets.set({x:0, y:0}, 0);
+    bullets.set({x:500, y:500}, 0);
     
     //c.onclick = play;
     play();
@@ -85,7 +85,7 @@ function run ()
 
     if (bullets)
     {
- //       bullets.move((now-then)/1000)
+        bullets.move((now-then)/1000);
     }
 
     then = now;

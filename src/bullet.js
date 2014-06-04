@@ -28,8 +28,10 @@ function Bullet ()
     this.print = function (ctx, w, h)
     {
         var iPosition = {x:position.x, y:position.y};
+        
         iPosition.x = iPosition.x%w;
         iPosition.y = iPosition.y%h;
+        
         if (iPosition.x < -w/2)
             iPosition.x += w;
         else if (iPosition.x > w/2)
@@ -43,7 +45,7 @@ function Bullet ()
 
         ctx.strokeStyle="#FFFFFF";
         ctx.beginPath();
-        ctx.arc(iPosition.x,iPosition.x,2,0,2*Math.PI);
+        ctx.arc(iPosition.x,iPosition.x,1,0,2*Math.PI);
         ctx.stroke();
     }
 
