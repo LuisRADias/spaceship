@@ -86,7 +86,6 @@ function run ()
     if (bullets)
     {
  //       bullets.move((now-then)/1000)
-        bullets.print(ctx, 1366, 728);
     }
 
     then = now;
