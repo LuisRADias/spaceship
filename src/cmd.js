@@ -6,17 +6,17 @@ var bullets;
 
 var pressed;
 
+var i;
+
 $(document).ready( function ()
 {
     c = document.getElementById("canvas1");
     ctx = c.getContext("2d");
     
     pressed = new Array(0, 0, 0);
-    bullets = new Bullet;
-    bullets.set({x:500, y:500}, 0);
     
-    //c.onclick = play;
-    play();
+    c.onclick = play;
+ //   play();
     c.onkeydown = attPos;
     c.onkeyup = attPos2;
 });
@@ -70,7 +70,12 @@ function attPos2 (e)
 function play ()
 {
     spaceship = new Spaceship ();
+    bullets = new Array;
+//    b1 = new Bullet();
+//    b1.set({x:0, y:0}, 0);
+//    bullets.push(b1);
     then = Date.now();
+
     setInterval(run, 10);
 }
 
@@ -83,10 +88,11 @@ function run ()
     spaceship.act(pressed[1], pressed[2], pressed[0], (now-then)/1000);
     spaceship.print(ctx, pressed[1], 1366, 728);
 
-    if (bullets)
+    for (i=0; i < bullets.length; i++)
     {
-        bullets.move((now-then)/1000);
+        bullets[i].move((now-then)/1000);
+        bullets[i].print(ctx, 1366, 728);
     }
-
+    
     then = now;
 }

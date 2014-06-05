@@ -45,7 +45,7 @@ function Bullet ()
 
         ctx.strokeStyle="#FFFFFF";
         ctx.beginPath();
-        ctx.arc(iPosition.x,iPosition.x,1,0,2*Math.PI);
+        ctx.arc(iPosition.x,iPosition.y,1,0,2*Math.PI);
         ctx.stroke();
     }
 
