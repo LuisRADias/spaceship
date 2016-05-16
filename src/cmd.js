@@ -15,10 +15,11 @@ $(document).ready( function ()
     
     pressed = new Array(0, 0, 0);
     
-    c.onclick = play;
- //   play();
+    //.onclick = play;
+    play();
     c.onkeydown = attPos;
     c.onkeyup = attPos2;
+    c.focus();
 });
 
 function attPos (e)
